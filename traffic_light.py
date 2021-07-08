@@ -1,11 +1,14 @@
 from random import choice
 
-traffic_light={"červená" :"Zůstaň stát!" , "žlutá" :"Připrav se!" , "zelená" : "Jeď"}
-random_warning_list = ["Tato barva není na semaforu.", "Asi porucha", "Vyber správnou barvu!",
-                       "Červená, žlutá, nebo zelená", "Ty jsi případ!", "Lorem ipsum dolor"]
-
-def last_warning_message(msg_text):
-    return msg_text
+traffic_light = {"červená": "Zůstaň stát!", "žlutá": "Připrav se!", "zelená": "Jeď"}
+random_warning_list = [
+    "Tato barva není na semaforu.",
+    "Asi porucha",
+    "Vyber správnou barvu!",
+    "Červená, žlutá, nebo zelená",
+    "Ty jsi případ!",
+    "Lorem ipsum dolor",
+]
 
 
 def random_message(last_warning_text):
@@ -15,10 +18,11 @@ def random_message(last_warning_text):
     message = choice(temp_warning_list)
     return message
 
+
 def main():
     repeat_cycle = True
-    last_warning_msg=""
-    while repeat_cycle :
+    last_warning_msg = ""
+    while repeat_cycle:
         repeat_cycle = False
         print(f"Poslední náhodný vzkaz: {last_warning_msg}")
 
@@ -27,17 +31,18 @@ def main():
         if what_to_do == None:
             random_warning = random_message(last_warning_msg)
             last_warning_msg = random_warning
-            print (random_warning)
+            print(random_warning)
         else:
             last_warning_msg = ""
-            print (what_to_do)
+            print(what_to_do)
 
         once_again = input("Opakovat cyklus ? (Ano/Ne) ")
         once_again = once_again.lower()
-        if once_again == "ano" :
+        if once_again == "ano":
             repeat_cycle = True
 
     print("Program bude ukončen.")
+
 
 if __name__ == "__main__":
     main()
